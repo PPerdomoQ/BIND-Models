@@ -1,0 +1,2 @@
+# BIND-Models
+This module describes the data elements in the KHTQ. It specifically covers the data element in the table _Diagnosis_. This module is based on the EJP RD CDE semantic model module for _Disease diagnosis_ group [CDE-semantic-model/disease diagnosis](https://github.com/ejp-rd-vp/CDE-semantic-model/blob/master/docs/disease_diagnosis.md).
