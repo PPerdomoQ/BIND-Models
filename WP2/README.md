@@ -73,11 +73,11 @@ This module describes the data elements in the single-cell RNA sequencing . It s
     sio:SIO_000221 :float_ ;
     sio:SIO_000300 "0.16"^^xsd:string .
     
-:float_ a sio:SIO_000074, obo:UO_0000192;
-    rdfs:label "Float"^^xsd:string.
+:float_ a sio:SIO_000074, obo:UO_0000192, obo:NCIT_C181341;
+    rdfs:label "Normalized Molecule Count"^^xsd:string.
 
 :integer_ a sio:SIO_000074, obo:UO_0000192;
-    rdfs:label "Integer"^^xsd:string.
+    rdfs:label "Molecule Count"^^xsd:string.
     
 :expression_ a sio:SIO_000614, obo:NCIT_C103158; 
     rdfs:label "RNA expression"^^xsd:string.
