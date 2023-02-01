@@ -1,0 +1,111 @@
+PREFIX : <http://w3id.org/bind/data/v1/example-rdf/> 
+PREFIX obo: <http://purl.obolibrary.org/obo/> 
+PREFIX sio: <http://semanticscience.org/resource/> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX prov: <http://www.w3.org/ns/prov#> 
+
+
+:identifierShex IRI {
+    a [sio:SIO_000115] ;
+    rdfs:label xsd:string? ;
+    sio:SIO_000020 @:roleShex ;
+    sio:SIO_000300 xsd:string 
+}
+
+:mouseShex IRI {
+    a [sio:SIO_000486] ;
+    rdfs:label xsd:string? ;
+    sio:SIO_000228 @:roleShex;
+    sio:SIO_000008 @:genotypeShex ;
+    sio:SIO_000008 @:expressionShex
+}
+
+:roleShex IRI {
+    a [obo:OBI_0000112];
+    a [sio:SIO_000016] ;
+    rdfs:label xsd:string?;
+    sio:SIO_000356 @:rna_processShex
+}
+    
+:rna_processShex IRI {
+    a [obo:OBI_0001177];
+    a [sio:SIO_000006] ;
+    rdfs:label xsd:string? ;
+    sio:SIO_000291 @:anatomyShex ;
+    sio:SIO_000229 @:rawShex ;
+    sio:SIO_000229 @:normalizedShex ;
+    sio:SIO_000230 @:cellShex
+}
+
+:cellShex IRI {
+    a [sio:SIO_010001]; 
+    rdfs:label xsd:string? ;
+    obo:HSO_0000243 @:anatomyShex
+}
+    
+:anatomyShex IRI {
+    a [obo:UBERON_0002037];
+    a [obo:UBERON_0002616];
+    a [sio:SIO_010046];
+    rdfs:label xsd:string?;
+    sio:SIO_000008 @:expressionShex ;
+    sio:SIO_000068 @:mouseShex
+}
+
+:cell_idShex IRI {
+    a [sio:SIO_000115];
+    rdfs:label xsd:string?;
+    sio:SIO_000020 @:cellShex ;
+    sio:SIO_000300 xsd:string 
+}
+    
+:rawShex IRI {
+    a [sio:SIO_000015];
+    a [obo:NCIT_C184799];
+    rdfs:label xsd:string?;
+    sio:SIO_000628 @:expressionShex;
+    sio:SIO_000221 @:integerShex ;
+    sio:SIO_000300 xsd:string 
+}
+
+:normalizedShex IRI {
+    a [sio:SIO_000015];
+    a [obo:NCIT_C184799];
+    rdfs:label xsd:string?;
+    sio:SIO_000628 @:expressionShex;
+    sio:SIO_000221 @:floatShex ;
+    sio:SIO_000300 xsd:string 
+}
+    
+:floatShex IRI {
+    a [sio:SIO_000074];
+    a [obo:UO_0000192];
+    a [obo:NCIT_C181341];
+    rdfs:label xsd:string?
+}
+
+:integerShex IRI {
+    a [sio:SIO_000074];
+    a [obo:UO_0000192];
+    rdfs:label xsd:string?
+}
+    
+:expressionShex IRI {
+    a [sio:SIO_010450];
+    a [sio:SIO_000614];
+    rdfs:label xsd:string? ;
+    sio:SIO_010079 @:geneShex
+}
+
+:geneShex IRI {
+    a [sio:SIO_010101];
+    rdfs:label xsd:string?
+}
+
+:genotypeShex IRI {
+    a [obo:SO_0001027];
+    a [sio:SIO_000614] ;
+    rdfs:label xsd:string? ;
+    sio:SIO_000300 xsd:string 
+}
