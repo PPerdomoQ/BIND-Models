@@ -1,0 +1,82 @@
+@prefix : <http://w3id.org/bind/data/v1/example-rdf/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+:identifier_ a sio:SIO_000115 ;
+    rdfs:label "Identifier"^^xsd:string ;
+    sio:SIO_000020 :role_ ;
+    sio:SIO_000300 "CNRS-bat1-35"^^xsd:string .
+
+:mouse_ a sio:SIO_000486 ;
+    rdfs:label "Entity: Mouse"^^xsd:string ;
+    sio:SIO_000228 :role_ ;
+    sio:SIO_000008 :genotype_ ;
+    sio:SIO_000008 :disability_.
+
+:role_ a obo:OBI_0000112, sio:SIO_000016 ;
+    rdfs:label "Role: Specimen"^^xsd:string ;
+    sio:SIO_000356 :behaviour_process_ .
+
+:behaviour_process_ a obo:NBO_0000313, sio:SIO_000006 ;
+    rdfs:label "Process: Measuring behaviour phenotype"^^xsd:string ;
+    sio:SIO_000362 :statistical_confidence_ ;
+    sio:SIO_000229 :time_d1_ ;
+    sio:SIO_000229 :time_d2_ ;
+    sio:SIO_000229 :freq_d1_ ;
+    sio:SIO_000229 :freq_d2_ .
+
+:time_d1_ a sio:SIO_000015; 
+    rdfs:label "Time Freezing Day 1"^^xsd:string ;
+    sio:SIO_000628 :disability_;
+    sio:SIO_000221 :unit_;
+    sio:SIO_000300 "130.8"^^xsd:string .
+
+:time_d2_ a sio:SIO_000015; 
+    rdfs:label "Time Freezing Day 2"^^xsd:string ;
+    sio:SIO_000628 :disability_;
+    sio:SIO_000221 :unit_;
+    sio:SIO_000300 "100.6"^^xsd:string .
+
+:freq_d1_ a sio:SIO_000015; 
+    rdfs:label "Freezing Latency Day 1"^^xsd:string ;
+    sio:SIO_000628 :disability_;
+    sio:SIO_000221 :unit_;
+    sio:SIO_000300 "20.6"^^xsd:string .
+
+:freq_d2_ a sio:SIO_000015; 
+    rdfs:label "Freezing Latency Day 2"^^xsd:string ;
+    sio:SIO_000628 :disability_;
+    sio:SIO_000221 :unit_;
+    sio:SIO_000300 "30.5"^^xsd:string .
+
+:unit_ a sio:SIO_000074, obo:UO_0000010;
+    rdfs:label "Unit: Seconds"^^xsd:string .
+
+:unit2_ a sio:SIO_000074, obo:UO_0000033;
+    rdfs:label "Unit: Days"^^xsd:string .
+
+:disability_ a obo:NBO_0000573 ,obo:NCIT_C21007 , sio:SIO_000614 ;
+    rdfs:label "Attribute: Behavioural phenotyoe functional test"^^xsd:string.
+
+:measurement_time_ a obo:NCIT_C185624, obo:IAO_0000582, sio:SIO_000417 ;
+    rdfs:label "Timestamp: age at function test"^^xsd:string ;
+    rdfs:comment "Age at test"^^xsd:string ;
+    sio:SIO_000300 "132"^^xsd:integer ;
+    sio:SIO_000221 :unit2_ ;
+    sio:SIO_000001 :role_ .
+
+:statistical_confidence_ a obo:OBI_0000175, sio:SIO_000015 ;
+    rdfs:label "Statistic: p-value"^^xsd:string ;
+    sio:SIO_000300 "<0.05"^^xsd:string .
+
+:genotype_ a obo:SO_0001027, sio:SIO_000614 ;
+    rdfs:label "Genotype"^^xsd:string ;
+    sio:SIO_000300 "Mdx52"^^xsd:string .
+
+
+
+
+
